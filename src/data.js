@@ -150,6 +150,7 @@ const prototypeData = [{
   "answers": ["prototype method", "object", "callback function"],
   "correctAnswer": "prototype method"
 }]
+
 /* eslint-enable */
 
 module.exports = {

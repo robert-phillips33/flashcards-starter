@@ -16,18 +16,18 @@ const genList = (round) => {
     name: 'answers',
     choices: choices
   };
-}
+};
 
 const getRound = (round) => {
   return Promise.resolve(round);
-}
+};
 
 const confirmUpdate = (id, round) => {
   const feedback = takeTurn(id, round);
   return {
     name: 'feedback',
     message: `Your answer of ${id} is ${feedback}`
-  }
+  };
 }
 
 async function main(round) {
@@ -39,7 +39,7 @@ async function main(round) {
       endRound(round);
     } else {
       main(round);
-    }
-}
+    };
+};
 
 module.exports.main = main;
