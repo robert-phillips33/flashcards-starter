@@ -7,4 +7,6 @@ const evaluateGuess = (guess, correctAnswer) => {
   };
 };
 
-module.exports = { evaluateGuess, }
+module.exports = {
+  evaluateGuess
+};
