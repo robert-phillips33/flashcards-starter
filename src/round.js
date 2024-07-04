@@ -1,4 +1,14 @@
 
+const createRound = (deck) => {
+  let round = {
+    deck: deck,
+    currentCard: deck[0],
+    turns: 0,
+    incorrectGuesses: []
+  };
+  return round;
+};
+
 const evaluateGuess = (guess, correctAnswer) => {
   if (guess === correctAnswer) {
     return 'correct!'
@@ -7,6 +17,9 @@ const evaluateGuess = (guess, correctAnswer) => {
   };
 };
 
+
+
 module.exports = {
+  createRound, 
   evaluateGuess
 };

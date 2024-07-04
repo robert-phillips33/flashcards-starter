@@ -1,5 +1,3 @@
-const { createCard } = require ('./card');
-
 
 const createDeck = (cards) => {
   let deck = cards
