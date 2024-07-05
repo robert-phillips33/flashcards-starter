@@ -18,7 +18,7 @@ const evaluateGuess = (guess, correctAnswer) => {
 };
 
 const takeTurn = (guess, round) => {
-  let roundResult = evaluateGuess(guess, round.currentCard.correctAnswer);
+  const roundResult = evaluateGuess(guess, round.currentCard.correctAnswer);
   if (roundResult === 'incorrect!') {
     round.incorrectGuesses.push(round.currentCard.id);
   };

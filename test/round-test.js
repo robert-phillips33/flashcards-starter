@@ -11,7 +11,7 @@ describe('evalateGuess', function() {
     expect(evaluateGuess).to.be.a('function');
   });
 
-  it('should evaluate correct or incorrect on a guess', function() {
+  it('should evaluate correct or incorrect on a guess', function () {
     const card = createCard(
       1,
       'What allows you to define a set of related information using key-value pairs?',
@@ -19,11 +19,26 @@ describe('evalateGuess', function() {
       'object'
     );
 
+    const card2 = createCard(
+      2,
+      "What is a comma-separated list of related values?",
+      ["array", "object", "function"],
+      "array");
+
+    const card3 = createCard(
+      3,
+      "What type of prototype method directly modifies the existing array?",
+      ["mutator method", "accessor method", "iteration method"],
+      "mutator method");
+
     const turn1 = evaluateGuess('object', card.correctAnswer);
     expect(turn1).to.equal('correct!');
 
-    const turn2 = evaluateGuess('array', card.correctAnswer);
+    const turn2 = evaluateGuess('function', card2.correctAnswer);
     expect(turn2).to.equal('incorrect!');
+
+    const turn3 = evaluateGuess('mutator method', card3.correctAnswer);
+    expect(turn3).to.equal('correct!')
   });
 });
 
@@ -123,10 +138,10 @@ describe ('calculatePercentCorrect', function() {
       takeTurn('object', round);
       takeTurn('array', round);
       takeTurn('mutator method', round);
-
+      
       const percentCorrect = calculatePercentCorrect(round)
       expect(percentCorrect).to.equal(100);
-      console.log(calculatePercentCorrect(round))
+      
   });
 });
 
