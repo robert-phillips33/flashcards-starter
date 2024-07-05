@@ -18,22 +18,34 @@ const evaluateGuess = (guess, correctAnswer) => {
 };
 
 const takeTurn = (guess, round) => {
-  let roundResult = evaluateGuess(guess, round.currentCard.correctAnswer);
+  const correctAnswer = round.currentCard.correctAnswer;
+  const roundResult = evaluateGuess(guess, correctAnswer);
+  
   if (roundResult === 'incorrect!') {
     round.incorrectGuesses.push(round.currentCard.id);
   };
 
   round.turns++;
-  round.currentCard = round.deck[round.turns]
+  round.currentCard = round.deck[round.turns];
+  return roundResult;
 };
 
 const calculatePercentCorrect = (round) => {
+  if (round.turns === 0) {
+    return 0;
+  };
+  
   let incorrectGuessCount = round.incorrectGuesses.length;
   let totalGuessCount = round.turns;
   
   let correctGuessCount = totalGuessCount - incorrectGuessCount;
-  let percentCorrect = (correctGuessCount / totalGuessCount) * 100;
+  let percentCorrect = ~~((correctGuessCount / totalGuessCount) * 100)
   return percentCorrect;
+};
+
+const endRound = (round) => {
+  console.log(`** Round over! ** You answered <${calculatePercentCorrect(round)}>% 
+  of the questions correctly!`)
 };
 
 
@@ -45,4 +57,5 @@ module.exports = {
   evaluateGuess,
   takeTurn,
   calculatePercentCorrect,
+  endRound
 };
