@@ -39,18 +39,13 @@ const calculatePercentCorrect = (round) => {
   let totalGuessCount = round.turns;
   
   let correctGuessCount = totalGuessCount - incorrectGuessCount;
-  let percentCorrect = ~~((correctGuessCount / totalGuessCount) * 100)
+  let percentCorrect = parseInt((correctGuessCount / totalGuessCount) * 100);
   return percentCorrect;
 };
 
 const endRound = (round) => {
-  console.log(`** Round over! ** You answered <${calculatePercentCorrect(round)}>% 
-  of the questions correctly!`)
+  console.log(`** Round over! ** You answered <${calculatePercentCorrect(round)}>% of the questions correctly!`)
 };
-
-
-
-
 
 module.exports = {
   createRound, 
