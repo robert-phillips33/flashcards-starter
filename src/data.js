@@ -14,7 +14,8 @@ const prototypeData = [{
   "question": "What type of prototype method directly modifies the existing array?",
   "answers": ["mutator method", "accessor method", "iteration method"],
   "correctAnswer": "mutator method"
-}, {
+} 
+, {
   "id": 4,
   "question": "What type of prototype method does not modify the existing array but returns a particular representation of the array?",
   "answers": ["mutator method", "accessor method", "iteration method"],
@@ -149,7 +150,7 @@ const prototypeData = [{
   "question": "What type of methods are functions that allow you to manipulate the value of a particular data type or class?",
   "answers": ["prototype method", "object", "callback function"],
   "correctAnswer": "prototype method"
-}]
+}];
 
 /* eslint-enable */
 
