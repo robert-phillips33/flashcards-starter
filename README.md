@@ -1,6 +1,6 @@
 <div align="center">
 
-### FLASHCARDS
+### ♠ FLASHCARDS ♠
 
 ### Abstract:
 
